@@ -34,7 +34,12 @@ c::
     KeepAttacking := false
     return
   }
+
   KeepAttacking := true
+
+  ; This will switch to the melee weapon before starting the attack.
+  Send 1
+
   while KeepAttacking
   {
     Send {Click}
