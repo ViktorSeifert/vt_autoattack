@@ -21,7 +21,10 @@
   *~XButton1::
   *~XButton2::
   *~r::
-  *~f::
+  ; Enable this so that activating the career skill stops the auto attack.
+  ; This is not greatly useful in most cases, so it is disabled.
+  ; The continued attack will not prevent the career skill from going off.
+  ;*~f::
   *~t::
   KeepAttacking := False
   Return
