@@ -1,4 +1,5 @@
-#IfWinActive Vermintide
+SetTitleMatchMode, RegEx
+#IfWinActive (Dark|Vermin)tide
 
 #MaxThreadsPerHotkey, 3
 
@@ -19,13 +20,13 @@
   *~WheelLeft::
   *~WheelRight::
   *~XButton1::
-  *~XButton2::
   *~r::
+  *~t::
   ; Enable this so that activating the career skill stops the auto attack.
   ; This is not greatly useful in most cases, so it is disabled.
   ; The continued attack will not prevent the career skill from going off.
   ;*~f::
-  *~t::
+  ;*~XButton2::
   KeepAttacking := False
   Return
 
@@ -41,14 +42,14 @@ c::
   KeepAttacking := true
 
   ; This will switch to the melee weapon before starting the attack.
-  Send 1
+  ; Send 1
 
   while KeepAttacking
   {
     Send {Click}
     Sleep, 100
 
-    IfWinNotActive Vermintide
+    IfWinNotActive (Dark|Vermin)tide
     {
       Break
     }
