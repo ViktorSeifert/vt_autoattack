@@ -3,6 +3,14 @@ SetTitleMatchMode, RegEx
 
 #MaxThreadsPerHotkey, 3
 
+  F9::
+    Hotkey, c, AutoAttack, off
+    Return
+
+  F10::
+    Hotkey, c, AutoAttack, on
+    Return
+
 ; List of keys to cancel the auto-attacking.
 ; These will be "let through" to the game.
 ; If you have other keybindings extend the list to include them.
@@ -29,12 +37,11 @@ SetTitleMatchMode, RegEx
   ; The continued attack will not prevent the career skill from going off.
   ;*~f::
   ;*~XButton2::
-  KeepAttacking := False
-  Return
+    KeepAttacking := False
+    Return
 
 ; Main loop to keep attacking (spam clicking LMB)
-c::
-  #MaxThreadsPerHotkey, 1
+AutoAttack:
   if KeepAttacking
   {
     KeepAttacking := false
@@ -43,6 +50,7 @@ c::
 
   KeepAttacking := true
 
+  #MaxThreadsPerHotkey, 1
   ; This will switch to the melee weapon before starting the attack.
   ; Send 1
 
