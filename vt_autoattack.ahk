@@ -52,7 +52,6 @@ AutoAttack:
 
   KeepAttacking := true
 
-  #MaxThreadsPerHotkey, 1
   ; This will switch to the melee weapon before starting the attack.
   ; Send 1
 
